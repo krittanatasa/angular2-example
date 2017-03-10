@@ -1,3 +1,3 @@
 export class Hero {
-  constructor(private id: number, private title: string) {}
+  constructor(id: number, name: string) {}
 }
