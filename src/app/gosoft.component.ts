@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hero } from './hero';
 
 @Component({
   selector: 'gosoft-root',
@@ -12,6 +13,4 @@ export class GosoftComponent {
   //  hero_2: Hero = {id: 2, title: 'Super man'}
 }
 
-class Hero {
-  constructor(private id: number, private title: string) {}
-}
+
