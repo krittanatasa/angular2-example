@@ -6,22 +6,27 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'gosoft-root',
   templateUrl: './gosoft.component.html',
-  styleUrls : ['gosoft.component.css']
+  styleUrls : ['gosoft.component.css'],
+  providers : [HeroService]
 })
 export class GosoftComponent implements OnInit {
     
     heroes: Hero[];
     title = 'Gosoft Component!';
     selectedHero: Hero;
-    heroService: HeroService;
- 
+    
+    constructor(private service: HeroService) {}
+
     ngOnInit(): void {
-        this.heroService = new HeroService();
-        this.heroes = this.heroService.getHero();
+        this.getHero();
     }
 
     doSomething(hero): void {
       console.log("click " + hero.name);
       this.selectedHero = hero;
+    }
+
+    getHero() : void {
+      this.heroes = this.service.getHero();
     }
 }
