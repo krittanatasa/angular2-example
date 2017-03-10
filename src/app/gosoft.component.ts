@@ -22,12 +22,11 @@ const HEROES: Hero[] = [
 export class GosoftComponent {
   
     title = 'Gosoft Component!';
-    hero: Hero = new Hero(1, 'Iron Man');
+    selectedHero: Hero;
     heroes = HEROES;
   //  hero_2: Hero = {id: 2, title: 'Super man'},
     doSomething(hero): void {
-      // hero.name = hero.name;
       console.log("click " + hero.name);
-      this.hero = hero;
+      this.selectedHero = hero;
     }
 }
