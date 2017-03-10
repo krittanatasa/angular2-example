@@ -27,6 +27,6 @@ export class GosoftComponent implements OnInit {
     }
 
     getHero() : void {
-      this.service.getHeroSlowly().then(heroes => this.heroes = heroes);
+      this.service.getHero().then(heroes => this.heroes = heroes);
     }
 }
