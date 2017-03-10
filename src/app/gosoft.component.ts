@@ -16,11 +16,13 @@ const HEROES: Hero[] = [
 
 @Component({
   selector: 'gosoft-root',
-  templateUrl: './gosoft.component.html'
+  templateUrl: './gosoft.component.html',
+  styleUrls : ['gosoft.component.css']
 })
 export class GosoftComponent {
   
     title = 'Gosoft Component!';
-    hero: Hero = new Hero(1, 'Iron Man')
+    hero: Hero = new Hero(1, 'Iron Man');
+    heroes = HEROES;
   //  hero_2: Hero = {id: 2, title: 'Super man'}
 }
