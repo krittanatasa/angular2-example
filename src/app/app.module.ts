@@ -5,10 +5,11 @@ import { HttpModule } from '@angular/http';
 
 //import { AppComponent } from './app.component';
 import { GosoftComponent } from './gosoft.component';
+import { GosoftDetail } from './gosoft.detail';
 
 @NgModule({
   declarations: [
-    GosoftComponent
+    GosoftComponent, GosoftDetail
   ],
   imports: [
     BrowserModule,
