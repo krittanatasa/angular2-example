@@ -1,12 +1,34 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { Location }                 from '@angular/common';
+import { HeroService } from './hero.service';
 import { Hero } from './hero';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
+  moduleId: module.id,
   selector: 'gosoft-detail',
-  templateUrl: './gosoft.detail.html'
+  templateUrl: './gosoft.detail.html',
+  providers: [HeroService]
 })
 
-export class GosoftDetail {
+export class GosoftDetail implements OnInit {
     @Input() 
     selectedHero :Hero;
+
+    constructor(
+      private heroService: HeroService,
+      private route: ActivatedRoute,
+      private location: Location
+      ) {}
+
+    ngOnInit(): void {
+      this.route.params
+        .switchMap((params: Params) => this.heroService.getHeroById(+params['id']))
+        .subscribe(hero => this.selectedHero = hero);
+    }
+
+    goBack(): void {
+      this.location.back();
+    }
 }

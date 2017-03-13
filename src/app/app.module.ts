@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { GosoftComponent } from './gosoft.component';
 import { GosoftDetail } from './gosoft.detail';
 import { DashBoard } from './dashboard.component';
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';  run cmd -> npm install
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashBoard } from './dashboard.component';
     HttpModule,
     RouterModule.forRoot([
       {path: '', component : DashBoard} ,
-      {path: 'heroes', component: GosoftComponent}
+      {path: 'heroes', component: GosoftComponent} ,
+      {path: 'detail/:id', component: GosoftDetail}
     ]
     )
   ],
