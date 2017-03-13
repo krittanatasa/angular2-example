@@ -9,7 +9,7 @@ import 'rxjs/add/operator/switchMap';
   moduleId: module.id,
   selector: 'gosoft-detail',
   templateUrl: './gosoft.detail.html',
-  providers: [HeroService]
+  providers: []
 })
 
 export class GosoftDetail implements OnInit {

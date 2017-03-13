@@ -7,7 +7,7 @@ import { HeroService } from './hero.service'
     selector : 'dashboard',
     templateUrl : './dashboard.component.html',
     styleUrls : ['gosoft.component.css'],
-    providers : [HeroService]
+    providers : []
 })
 export class DashBoard implements OnInit {
     heroes: Hero[];
