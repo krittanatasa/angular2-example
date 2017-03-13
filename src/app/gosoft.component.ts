@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gosoft-root',
@@ -15,7 +15,8 @@ export class GosoftComponent implements OnInit {
     title = 'Gosoft Component!';
     selectedHero: Hero;
     
-    constructor(private service: HeroService) {}
+    constructor(private service: HeroService, 
+          private router: Router) {}
 
     ngOnInit(): void {
         this.getHero();
@@ -28,5 +29,9 @@ export class GosoftComponent implements OnInit {
 
     getHero() : void {
       this.service.getHero().then(heroes => this.heroes = heroes);
+    }
+
+    gotoDetail(): void {
+      this.router.navigate(['/detail', this.selectedHero.id]);
     }
 }
