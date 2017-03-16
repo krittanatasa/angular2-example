@@ -9,11 +9,12 @@ import 'rxjs/add/operator/switchMap';
   moduleId: module.id,
   selector: 'gosoft-detail',
   templateUrl: './gosoft.detail.html',
-  providers: []
+  providers: [],
+  styleUrls: ['./gosoft.detail.css']
 })
 
 export class GosoftDetail implements OnInit {
-    @Input() 
+    
     selectedHero :Hero;
 
     constructor(

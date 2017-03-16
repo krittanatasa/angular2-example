@@ -6,7 +6,7 @@ import { HeroService } from './hero.service'
     moduleId: module.id,
     selector : 'dashboard',
     templateUrl : './dashboard.component.html',
-    styleUrls : ['gosoft.component.css'],
+    styleUrls : ['dashboard.component.css'],
     providers : []
 })
 export class DashBoard implements OnInit {
