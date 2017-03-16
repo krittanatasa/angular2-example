@@ -20,6 +20,6 @@ export class DashBoard implements OnInit {
     }
 
     getHero() : void {
-      this.service.getHero().then(heroes => this.heroes = heroes.slice(0,4));
+      this.service.getHeroes().then(heroes => this.heroes = heroes.slice(0,4));
     }
 }
