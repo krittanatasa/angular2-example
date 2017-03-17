@@ -15,12 +15,15 @@ import { HeroService } from './hero.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
+import { HeroSearchComponent } from './hero-search.component';
+
 @NgModule({
   declarations: [
     GosoftComponent, 
     GosoftDetail, 
     DashBoard,
-    AppComponent
+    AppComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
