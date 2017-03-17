@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
             <nav>
               <a [routerLink]="['/']"> DashBoard </a>
               <a [routerLink]="['/heroes']"> Hero </a>
+              <a [routerLink]="['/add']"> Add </a>
             </nav>
             <router-outlet></router-outlet>`,
   styleUrls: ['./app.component.css'],

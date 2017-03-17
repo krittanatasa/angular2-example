@@ -16,6 +16,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { HeroSearchComponent } from './hero-search.component';
+import { AddHeroComponent } from './add.hero.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeroSearchComponent } from './hero-search.component';
     GosoftDetail, 
     DashBoard,
     AppComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    AddHeroComponent
   ],
   imports: [
     BrowserModule,
