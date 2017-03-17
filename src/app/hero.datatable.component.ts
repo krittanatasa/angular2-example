@@ -4,17 +4,18 @@ import { HeroService } from './hero.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'gosoft-root',
-  templateUrl: './gosoft.component.html',
-  styleUrls : ['gosoft.component.css'],
+//   selector: 'gosoft-root',
+  templateUrl: './hero.datatable.component.html',
+ styleUrls : ['hero.datatable.component.css'],
   providers : [HeroService]
 })
-export class GosoftComponent implements OnInit {
+export class HeroDataTableComponent implements OnInit {
     
-  public sortBy = "id";
+    public sortBy = "id";
+    public filterQuery = "";
 
     heroes: Hero[];
-    title = 'Gosoft Component!';
+    title = 'DataTable';
     selectedHero: Hero;
     
     constructor(private service: HeroService, 
@@ -35,24 +36,5 @@ export class GosoftComponent implements OnInit {
 
     gotoDetail(): void {
       this.router.navigate(['/detail', this.selectedHero.id]);
-    }
-
-    add(name: string): void {
-      name = name.trim();
-      if (!name) { return; }
-      this.service.create(name)
-        .then(hero => {
-          this.heroes.push(hero);
-          this.selectedHero = null;
-        });
-    }
-
-    delete(hero: Hero): void {
-      this.service
-          .delete(hero.id)
-          .then(() => {
-            this.heroes = this.heroes.filter(h => h !== hero);
-            if (this.selectedHero === hero) { this.selectedHero = null; }
-          });
     }
 }

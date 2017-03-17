@@ -17,6 +17,11 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { HeroSearchComponent } from './hero-search.component';
 import { AddHeroComponent } from './add.hero.component';
+import { DataTableModule } from "angular2-datatable";
+
+//  import { HeroDataTableComponent } from './hero.datatable.component';
+import { HeroDataTableModule } from './hero.datatable.module';
+// import { DataFilterPipe }   from './data-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,13 +31,17 @@ import { AddHeroComponent } from './add.hero.component';
     AppComponent,
     HeroSearchComponent,
     AddHeroComponent
+    //  HeroDataTableComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    AppRoutingModule
+    AppRoutingModule,
+    DataTableModule,
+    HeroDataTableModule
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
